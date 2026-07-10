@@ -1,0 +1,37 @@
+.card{
+    height: 300px;
+    width: 200px;
+    border: 1px solid white;
+    border-radius: 20px;
+    display: block;
+    padding: 10px;
+    margin: 10px;
+}
+.card-image{
+    height: 200px;
+    /* border: 1px solid white; */
+    border-radius: 15px 15px 0px 0px;
+}
+
+.card-description{
+    height: 60px;
+    padding: 10px;
+    /* border: 1px solid white; */
+    border-radius: 0px 0px 15px 15px;
+    margin-top: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img{
+   height: 200px;
+   width: 198px;
+   border-radius: inherit; 
+}
+
+p{
+    font-family: cursive;
+    font-size: 35px;
+    color: White;
+}

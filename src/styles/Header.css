@@ -1,0 +1,16 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: cursive;
+}
+
+.header-title{
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.header-details{
+    margin-right: 20px;
+}

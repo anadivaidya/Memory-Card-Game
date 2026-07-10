@@ -12,7 +12,6 @@ function App() {
 
   //effects
   useEffect(() => {
-    setLoading(true);
     const fetchData = async () => {
       try {
         const arrayIDs = [1, 2, 3, 4];

@@ -1,5 +1,6 @@
 import Header from "./components/Header";
 import Gameboard from "./components/Gameboard";
+import Loading from "./components/Loading";
 import "./app.css";
 import { useState, useEffect } from "react";
 
@@ -14,7 +15,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const arrayIDs = [1, 2, 3, 4];
+        const arrayIDs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
         const promises = arrayIDs.map(async (id) => {
           const response = await fetch(
             `https://pokeapi.co/api/v2/pokemon/${id}`,
@@ -48,7 +49,7 @@ function App() {
   return (
     <>
       <Header score={score} highScore={highScore} />
-      {loading ? <div>Game Loading...</div> : <Gameboard list={data} />}
+      {loading ? <Loading /> : <Gameboard list={data} />}
     </>
   );
 }

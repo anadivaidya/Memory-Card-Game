@@ -11,6 +11,8 @@ function App() {
   const [highScore, setHighScore] = useState(0);
   const [loading, setLoading] = useState(true);
 
+  const [clickedIds, setClickedIds] = useState([])
+
   //effects
   useEffect(() => {
     const fetchData = async () => {
@@ -44,12 +46,39 @@ function App() {
     fetchData();
   }, []);
 
-  //handlers
+  //logic
+  const shuffleCards = () => {
+    const shuffled = [...data].sort(() => Math.random() - 0.5);
+    setData(shuffled);
+  }
+
+  const handleCardClick = (id) => {
+    if(clickedIds.includes(id)){
+      if(score >= highScore){
+        setHighScore(score)
+      }
+      setScore(0);
+      setClickedIds([])
+      alert("Game Over!");
+    } else{
+      const nextScore = score + 1;
+      setScore(nextScore);
+      setClickedIds([...clickedIds, id]);
+
+      if(nextScore === data.length){
+        setHighScore(nextScore);
+        setScore(0);
+        setClickedIds([]);
+        alert("Perfect Game!")
+      }
+    }
+    shuffleCards()
+  }
 
   return (
     <>
       <Header score={score} highScore={highScore} />
-      {loading ? <Loading /> : <Gameboard list={data} />}
+      {loading ? <Loading /> : <Gameboard list={data} onCardClick={handleCardClick}/>}
     </>
   );
 }

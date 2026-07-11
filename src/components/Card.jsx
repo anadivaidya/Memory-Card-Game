@@ -1,8 +1,8 @@
 import "../styles/Card.css"
-export default function Card({image, details}) {
+export default function Card({image, details, onClick}) {
     return(
         <>
-            <div className="card">
+            <div className="card" onClick={onClick} style={{cursor: 'pointer'}}>
                 <div className="card-image">
                     <img src={image} alt="pokemon" />
                 </div>

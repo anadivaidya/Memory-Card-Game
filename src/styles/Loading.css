@@ -1,0 +1,8 @@
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+    font-family: cursive;
+    height: calc(100dvh - 150px)
+}
